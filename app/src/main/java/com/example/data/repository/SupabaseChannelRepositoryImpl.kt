@@ -17,6 +17,7 @@ data class ChannelDto(
     val id: String? = null,
     @SerialName("user_id") val userId: String,
     val name: String,
+    val handle: String,
     val category: String? = null,
     @SerialName("logo_url") val profileImageUrl: String? = null,
     @SerialName("cover_photo_url") val bannerImageUrl: String? = null,
@@ -28,7 +29,7 @@ data class ChannelDto(
             id = id ?: "",
             userId = userId,
             name = name,
-            handle = "@${name.replace(" ", "").lowercase()}",
+            handle = handle,
             description = "",
             category = category ?: "",
             profileImageUrl = profileImageUrl ?: "",
@@ -105,6 +106,7 @@ class SupabaseChannelRepositoryImpl(
             val channelDto = ChannelDto(
                 userId = userId,
                 name = name,
+                handle = handle,
                 category = category,
                 profileImageUrl = profileUrl.ifEmpty { null },
                 bannerImageUrl = bannerUrl.ifEmpty { null }
