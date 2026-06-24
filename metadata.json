@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: Circle",
+  "description": "A production-ready Android social media application with Shorts, Long Videos, and modern features.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
